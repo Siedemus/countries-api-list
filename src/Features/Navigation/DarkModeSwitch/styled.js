@@ -6,8 +6,13 @@ export const Button = styled.button`
   gap: 8px;
   font-size: 19px;
   color: ${({ theme }) => theme.colors.text};
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   cursor: pointer;
   align-items: center;
+
+  &&:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
 `;
