@@ -6,4 +6,5 @@ export const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   text-align: center;
+  box-shadow: 1px -10px 15px 0px rgba(0, 0, 0, 0.75);
 `;
