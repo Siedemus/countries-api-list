@@ -5,5 +5,5 @@ export const CountriesContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: auto 5px;
-  gap: 70px;
+  gap: 50px;
 `;

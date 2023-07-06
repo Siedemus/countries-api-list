@@ -1,13 +1,12 @@
 import { css, styled } from "styled-components";
 
 export const Container = styled.div`
-  margin: 50px -35px;
+  margin: 50px 0;
   display: flex;
   flex-wrap: wrap;
-  text-align: center;
   justify-content: space-between;
 
-  @media (max-width: 946px) {
+  @media (max-width: 1037px) {
     gap: 50px;
     margin: 50px 0;
   }
@@ -22,7 +21,7 @@ export const Input = styled.input`
   color: ${({ theme }) => theme.colors.text};
   border-radius: 7px;
   box-shadow: 0px 1px 41px -17px rgba(0, 0, 0, 0.75);
-  margin: auto 45px;
+  transition: 0.5s;
 
   &::placeholder {
     color: ${({ theme }) => theme.colors.text};
@@ -31,7 +30,7 @@ export const Input = styled.input`
   ${({ as }) =>
     as === "select" &&
     css`
-      max-width: 200px;
+      max-width: 295px;
       width: 100%;
     `}
 `;

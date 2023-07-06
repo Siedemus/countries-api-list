@@ -6,9 +6,9 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body {
-    margin: 0 auto;
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
     font-family: Nunito Sans;
+    transition: 0.5s;
 }
 `;
