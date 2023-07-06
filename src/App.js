@@ -4,6 +4,7 @@ import { GlobalStyles } from "./Assets/Styles/globalStyles";
 import { Navigation } from "./Features/Navigation";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { selectIsDarkMode } from "./Features/Navigation/DarkModeSwitch/darkModeSlice";
+import { CountriesList } from "./Features/CountriesList";
 
 function App() {
   const darkMode = useSelector(selectIsDarkMode);
@@ -12,6 +13,7 @@ function App() {
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <GlobalStyles />
       <Navigation />
+      <CountriesList />
     </ThemeProvider>
   );
 }
