@@ -25,7 +25,6 @@ export const Flag = styled.img`
 `;
 
 export const Text = styled.p`
-  font-weight: 600;
   font-size: 15px;
   margin: 0;
 `;
