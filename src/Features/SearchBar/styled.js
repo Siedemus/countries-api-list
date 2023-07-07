@@ -14,6 +14,7 @@ export const Container = styled.div`
 
 export const Input = styled.input`
   padding: 20px;
+  font-weight: 600;
   max-width: 550px;
   width: 100%;
   background-color: ${({ theme }) => theme.colors.input};
