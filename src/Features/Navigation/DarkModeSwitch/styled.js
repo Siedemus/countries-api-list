@@ -10,6 +10,7 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
   align-items: center;
+  transition: 0.5s;
 
   &&:hover {
     text-decoration: underline;

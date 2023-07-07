@@ -1,6 +1,8 @@
 import { Container, Input } from "./styled";
 
 export const SearchBar = () => {
+
+
   return (
     <Container>
       <Input placeholder="Search for a country..." />
