@@ -23,7 +23,20 @@ const countriesSlice = createSlice({
 export const { fetchCountries, fetchCountriesFailed, fetchCountriesSucces } =
   countriesSlice.actions;
 
-export const selectCountries = (state) => state.countries.data;
-export const selectStatus = (state) => state.countries.status;
+const selectCountriesState = (state) => state.countries;
+
+export const selectCountries = (state) => selectCountriesState(state).data;
+export const selectStatus = (state) => selectCountriesState(state).status;
+
+export const selectCountryByCCA3 = (state, code) => {
+  const countries = selectCountries(state);
+
+  if (!countries) {
+    return null;
+  }
+  return countries.find(
+    (country) => country.cca3.toUpperCase() === code.toUpperCase()
+  );
+};
 
 export default countriesSlice.reducer;
