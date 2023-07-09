@@ -22,8 +22,8 @@ export const CountryDetails = () => {
   return (
     <Page>
       <BackButton to="/">
-      <ion-icon name="arrow-back-sharp"></ion-icon>
-      Back
+        <ion-icon name="arrow-back-sharp"></ion-icon>
+        Back
       </BackButton>
       <Container>
         {!data ? (

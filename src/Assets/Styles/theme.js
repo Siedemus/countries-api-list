@@ -7,7 +7,7 @@ const darkTheme = {
   },
 };
 
- const lightTheme = {
+const lightTheme = {
   colors: {
     elements: "hsl(0, 0%, 100%)",
     background: "hsl(0, 0%, 98%)",
@@ -15,6 +15,5 @@ const darkTheme = {
     input: "hsl(0,0%,100%)",
   },
 };
-
 
 export { darkTheme, lightTheme };
