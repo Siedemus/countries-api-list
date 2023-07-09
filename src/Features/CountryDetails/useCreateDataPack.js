@@ -8,8 +8,6 @@ export const useCreateDataPack = (code) => {
     return null;
   }
 
-  console.log(country);
-
   const data = {
     flag: country.flags.svg ? country.flags.svg : "No Data",
     commonName: country.name.common ? country.name.common : "No Data",

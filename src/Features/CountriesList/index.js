@@ -1,20 +1,25 @@
 import { useSelector } from "react-redux";
-import {
-  selectCountries,
-  selectStatus,
-} from "./countriesSlice";
+import { selectCountryByFilter, selectStatus } from "./countriesSlice";
 import { Country } from "./Country";
 import { CountriesContainer } from "./styled";
+import { useLocation } from "react-router-dom";
 
 export const CountriesList = () => {
-  const countries = useSelector(selectCountries);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const searchQuery = searchParams.get("search");
+  const regionQuery = searchParams.get("region");
+
+  const countries = useSelector((state) =>
+    selectCountryByFilter(state, searchQuery, regionQuery)
+  );
   const status = useSelector(selectStatus);
 
   return (
     <CountriesContainer>
       {status === "loading" ? (
-        <p>Ładowanie...</p>
-      ) : status === "succes" ? (
+        <p>Loaing...</p>
+      ) : status === "succes" && countries.length > 0 ? (
         countries.map((country) => (
           <Country
             key={country.name.common}
@@ -26,7 +31,9 @@ export const CountriesList = () => {
             cca3={country.cca3}
           />
         ))
-      ) : null}
+      ) : (
+        <div>Not found!</div>
+      )}
     </CountriesContainer>
   );
 };

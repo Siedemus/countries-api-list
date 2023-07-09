@@ -39,4 +39,28 @@ export const selectCountryByCCA3 = (state, code) => {
   );
 };
 
+export const selectCountryByFilter = (state, searchQuery, regionQuery) => {
+  const countries = selectCountries(state);
+
+  if (!regionQuery && !searchQuery) {
+    return countries;
+  }
+
+  let filtredCountries = countries;
+
+  if (regionQuery) {
+    filtredCountries = filtredCountries.filter(({ region }) =>
+      region.includes(regionQuery)
+    );
+  }
+
+  if (searchQuery && searchQuery.trim() !== "") {
+    filtredCountries = filtredCountries.filter(({ name }) =>
+      name.common.toUpperCase().includes(searchQuery.trim().toUpperCase())
+    );
+  }
+
+  return filtredCountries;
+};
+
 export default countriesSlice.reducer;
