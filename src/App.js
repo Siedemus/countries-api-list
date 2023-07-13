@@ -7,7 +7,7 @@ import { selectIsDarkMode } from "./Features/Navigation/DarkModeSwitch/darkModeS
 import { CountriesList } from "./Features/CountriesList";
 import { SearchBar } from "./Features/SearchBar";
 import { Main } from "./styled";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import { CountryDetails } from "./Features/CountryDetails";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -21,15 +21,16 @@ function App() {
     dispatch(fetchCountries());
   }, []);
 
+
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <GlobalStyles />
       <Navigation />
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter>
         <Routes>
           <Route path="/country/:id" element={<CountryDetails />} />
           <Route
-            path="/countries-list/"
+            path="/"
             element={
               <Main>
                 <SearchBar />
@@ -39,7 +40,7 @@ function App() {
           />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ThemeProvider>
   );
 }
