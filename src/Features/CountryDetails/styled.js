@@ -16,7 +16,7 @@ export const Container = styled.div`
 
 export const Flag = styled.img`
   min-width: 290px;
-  max-width: 800px;
+  max-width: 700px;
   margin-bottom: 20px;
 `;
 
@@ -64,6 +64,8 @@ export const Button = styled(Link)`
 export const Footer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 15px;
 
   @media (max-width: 1000px) {
@@ -93,7 +95,7 @@ export const BackButton = styled(Link)`
   transition: 0.5s;
   box-shadow: 5px 0px 30px -7px rgba(0, 0, 0, 0.75);
   text-decoration: none;
-  margin: 0 auto;
+  margin: 15px;
 
   &:hover {
     transform: scale(1.1);
@@ -102,5 +104,6 @@ export const BackButton = styled(Link)`
 
 export const Page = styled.div`
   text-align: center;
-  margin-top: 70px;
+  margin: 70px auto;
+  max-width: 1500px;
 `;

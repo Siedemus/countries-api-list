@@ -22,6 +22,7 @@ export const Flag = styled.img`
   border-radius: 9px 9px 0 0;
   width: 300px;
   height: 200px;
+  object-fit: cover;
 `;
 
 export const Text = styled.p`
