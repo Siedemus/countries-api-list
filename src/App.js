@@ -7,7 +7,7 @@ import { selectIsDarkMode } from "./Features/Navigation/DarkModeSwitch/darkModeS
 import { CountriesList } from "./Features/CountriesList";
 import { SearchBar } from "./Features/SearchBar";
 import { Main } from "./styled";
-import { MemoryRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { CountryDetails } from "./Features/CountryDetails";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -21,37 +21,25 @@ function App() {
     dispatch(fetchCountries());
   }, []);
 
-  const routes = [
-    {
-      path: "/",
-      element: (
-        <Main>
-          <SearchBar />
-          <CountriesList />
-        </Main>
-      ),
-    },
-    {
-      path: "/country/:id",
-      element: <CountryDetails />,
-    },
-    {
-      path: "*",
-      element: <Navigate to="/" />,
-    },
-  ];
-
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <GlobalStyles />
       <Navigation />
-      <MemoryRouter>
+      <BrowserRouter>
         <Routes>
-          {routes.map((route) => (
-            <Route key={route.path} path={route.path} element={route.element} />
-          ))}
+          <Route path="/country/:id" element={<CountryDetails />} />
+          <Route
+            path="/"
+            element={
+              <Main>
+                <SearchBar />
+                <CountriesList />
+              </Main>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
-      </MemoryRouter>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
