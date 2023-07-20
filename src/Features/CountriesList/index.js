@@ -18,7 +18,7 @@ export const CountriesList = () => {
   return (
     <CountriesContainer>
       {status === "loading" ? (
-        <p>Loaing...</p>
+        <p>Loading...</p>
       ) : status === "succes" && countries.length > 0 ? (
         countries.map((country) => (
           <Country
