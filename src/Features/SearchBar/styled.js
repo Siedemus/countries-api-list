@@ -7,7 +7,8 @@ export const Container = styled.div`
   justify-content: space-between;
 
   @media (max-width: 1037px) {
-    gap: 50px;
+    justify-content: center;
+    gap: 20px;
     margin: 50px 0;
   }
 `;
